@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <div class="main-content">
+    <h3>Hello world!
+      {% if not data.user %}
+        <a class="login-link" href="/login">Login</a>
+      {% endif %}
+    </h3>
+
+    <input type="text" />
+
+    {{ apos.singleton(data.page, 'name', 'apostrophe-rich-text', { toolbar: ['Bold', 'Italic'] }) }}
+  </div>
+{% endblock %}
