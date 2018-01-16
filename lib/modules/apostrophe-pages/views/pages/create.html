@@ -1,6 +1,9 @@
 {% extends "layout.html" %}
 
 {% block main %}
+<div class="headerContainer">
+  
+</div>
   <div class="main-content">
     <h3>Hello world!
       {% if not data.user %}
@@ -11,5 +14,38 @@
     <input type="text" />
 
     {{ apos.singleton(data.page, 'name', 'apostrophe-rich-text', { toolbar: ['Bold', 'Italic'] }) }}
+
+    <input type="text" />
+    <input type="text" />
+
+    {{ apos.area(data.page, 'body', {
+      widgets: {
+        'apostrophe-rich-text': {
+          toolbar: [ 'Bold', 'Italic' ]
+        },
+        'apostrophe-images': {
+          size: 'full'
+        }
+      }
+    }) }}
+
+    <input type="text" />
+    
+    {{ apos.area(data.page, 'body', {
+      widgets: {
+        'apostrophe-images': {
+          size: 'full'
+        },
+
+        'apostrophe-rich-text': {
+          toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+          styles: [
+            { name: 'Heading', element: 'h3' },
+            { name: 'Subheading', element: 'h4' },
+            { name: 'Paragraph', element: 'p' }
+          ]
+        }
+      }
+    }) }}
   </div>
 {% endblock %}
