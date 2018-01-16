@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<div class="headerContainer">
-  
+<div class="header-container">
+  <strong>BdF Frida</strong>
 </div>
   <div class="main-content">
     <h3>Hello world!
@@ -11,41 +11,51 @@
       {% endif %}
     </h3>
 
-    <input type="text" />
+    <div class="escolha-um">
+      <label for="categoria">Categorias</label>
+      <select class="categoria">
+	<option>Categoria 1</option>
+	<option>Categoria 2</option>
+      </select>
+    </div>
 
-    {{ apos.singleton(data.page, 'name', 'apostrophe-rich-text', { toolbar: ['Bold', 'Italic'] }) }}
+    <div class="texto-um">
+      <input type="text" />
+    </div>
 
-    <input type="text" />
-    <input type="text" />
-
-    {{ apos.area(data.page, 'body', {
-      widgets: {
-        'apostrophe-rich-text': {
-          toolbar: [ 'Bold', 'Italic' ]
-        },
-        'apostrophe-images': {
-          size: 'full'
-        }
-      }
-    }) }}
-
-    <input type="text" />
+    <div class="texto-dois">
+      <input type="text" />
+    </div>
     
-    {{ apos.area(data.page, 'body', {
-      widgets: {
-        'apostrophe-images': {
-          size: 'full'
-        },
+    <div class="texto-tres">
+      <input type="text" />
+    </div>
 
-        'apostrophe-rich-text': {
-          toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
-          styles: [
-            { name: 'Heading', element: 'h3' },
-            { name: 'Subheading', element: 'h4' },
-            { name: 'Paragraph', element: 'p' }
-          ]
-        }
-      }
-    }) }}
+    <div class="editor-um">
+      {{ apos.singleton(data.page, 'editor-um', 'apostrophe-rich-text', {
+      toolbar: [
+      'Styles',
+      'Blockquote',
+      'Bold',
+      'Italic',
+      'Link',
+      'BulletedList',
+      'Copy',
+      'Cut',
+      'Paste',
+      'Undo',
+      'Redo',
+      'Image',
+      'Strikethrough',
+      'Remove Format'
+      ],
+      styles: [{ name: 'Titulo', element: 'h2' }]
+      }) }}
+    </div>
+
+    <div class="texto-tres">
+      <input type="text" />
+    </div>
+    
   </div>
 {% endblock %}
